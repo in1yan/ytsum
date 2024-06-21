@@ -1,20 +1,38 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {Image} from 'react-native';
+import { useFonts } from 'expo-font';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+import Summary from './screens/summary.js';
+import Home from './screens/home.js';
+
+const Stack = createNativeStackNavigator();
+
+const App=()=>{
+  const [fontsLoaded, fontError] = useFonts({
+    'SourceCodePro': require('./assets/fonts/SourceCodePro.ttf'),
+  });
+  return(
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name='Home'
+          component={Home}
+          options={{headerShown:false}}
+        />
+        <Stack.Screen
+          name='Summary'
+          component={Summary}
+          options={{headerShown:true}}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+    )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const Logo=()=>{
+  return(
+      <Image style={{height:100,width:100,alignSelf:'center'}} source={require('./assets/home-logo.png')}/>
+      );
+}
+export default App;
