@@ -8,15 +8,15 @@ const Home=({navigation,route})=>{
 	}
 	return (
 		<View style={styles.container}>
-				<Image style={{height:200,width:200,resizeMode:'contain'}}source={require('../assets/home-logo.png')}/>
+			<Image style={{height:200,width:200,resizeMode:'contain'}}source={require('../assets/home-logo.png')}/>
 			<View style={styles.searchSection}>
 				<TextInput style={styles.input} onChangeText={(text)=>setUrl(text)} value={url} placeholder='Enter url'/>
 				<View style={{flex:1,flexDirection:'row',justifyContent:'space-between'}}>
-				  <TouchableOpacity style={{backgroundColor:'#458588',width:120, height:40, borderRadius:50}} onPress={()=>changeScreen(url)}>
-				    <Text style={{color:'#fff',textAlign:'center',paddingTop:5,fontSize:20, fontWeight:'bold'}}>Summarize</Text>
+				  <TouchableOpacity style={{backgroundColor:'#458588',width:140, height:40, borderRadius:50}} onPress={()=>changeScreen(url)}>
+				    <Text style={{color:'#fff',textAlign:'center',paddingTop:5,fontSize:20, fontWeight:'bold',fontFamily:'monospace'}}>Summarize</Text>
 				  </TouchableOpacity>
 				  <TouchableOpacity style={{backgroundColor:'#458588',width:110, height:40, borderRadius:50}} onPress={()=>{setUrl('')}}>
-				    <Text style={{color:'#fff',textAlign:'center',paddingTop:5,fontSize:20, fontWeight:'bold'}}>clear</Text>
+				    <Text style={{color:'#fff',textAlign:'center',paddingTop:5,fontSize:20, fontWeight:'bold',fontFamily:'monospace'}}>clear</Text>
 				  </TouchableOpacity>
 				</View>
 			</View>
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     fontSize:20,
     width:'100%',
     marginBottom:20,
-    fontFamily:'SourceCodePro'
+    fontFamily:'monospace'
   },
 })
 export default Home;

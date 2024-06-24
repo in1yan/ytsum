@@ -37,7 +37,7 @@ const Summary=({navigation,route})=> {
       {loading?(
         <View style={{height:"100%",justifyContent:'center',alignItems:'center'}}>
           <ActivityIndicator size={100}/>
-          <Text style={{color:'#458588',textShadowColor:'#458588',textShadowRadius:5,fontSize:20,fontFamily:'SourceCodePro',fontWeight:'bold'}}>summarizing the video...</Text>
+          <Text style={{color:'#458588',textShadowColor:'#458588',textShadowRadius:2,fontSize:20,fontFamily:'monospace',fontWeight:'bold'}}>summarizing the video...</Text>
         </View>
         ):(
         <ScrollView style={{marginTop:20,marginLeft:0, marginRight:0}} showsVerticalScrollIndicator={false}>
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     textShadowRadius:3,
     marginTop:20,
     lineHeight:30,
-    fontFamily:'SourceCodePro'
+    fontFamily:'monospace'
   },
   strong:{
     color:'#8ec07c',

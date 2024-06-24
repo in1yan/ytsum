@@ -6,33 +6,42 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
-    "plugins":[
-      [
-        "expo-font",
-        {
-          "fonts":["./assets/fonts/SourceCodePro.ttf"]
-        }
-      ]
-    ],
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#ffffff",
       },
-      "splash":{
-        "foregroundImage":"./assets/splash.png"
-      }
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+      "package": "com.in1y4n.ytsum"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/07e5e179-3c99-4bd0-8214-0f7bf1414fd7"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "07e5e179-3c99-4bd0-8214-0f7bf1414fd7"
+      }
     }
   }
 }
